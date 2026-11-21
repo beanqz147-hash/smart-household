@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SmartFinance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">₣ Smart<span>Finance</span></div>
+        <p class="nav-label">MAIN MENU</p>
+        <nav>
+            <a class="active" href="dashboard.html">▦ Dashboard</a>
+            <a href="income.html">↗ Income</a>
+            <a href="expenses.html">↙ Expenses</a>
+            <a href="budgets.html">▤ Budgets</a>
+            <a href="goals.html">◎ Financial Goals</a>
+            <a href="reports.html">▥ Reports</a>
+            <a href="settings.html">⚙ Settings</a>
+        </nav>
+        <button class="logout-btn" onclick="logout()">↪ Logout</button>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h2>Dashboard</h2>
+                <p class="date-display">Welcome back, <span id="userName">User</span>!</p>
+            </div>
+            <p class="date-display" id="todayDate"></p>
+        </header>
+
+        <section class="summary-grid">
+            <div class="summary-card purple">
+                <p>Total Income</p>
+                <h2 id="totalIncome">KSh 0.00</h2>
+                <span>↗ Money received</span>
+            </div>
+            <div class="summary-card blue">
+                <p>Total Expenses</p>
+                <h2 id="totalExpenses">KSh 0.00</h2>
+                <span>↘ Money spent</span>
+            </div>
+            <div class="summary-card green">
+                <p>Available Balance</p>
+                <h2 id="balance">KSh 0.00</h2>
+                <span>Current balance</span>
+            </div>
+            <div class="summary-card orange">
+                <p>Total Savings</p>
+                <h2 id="totalSavings">KSh 0.00</h2>
+                <span>Saved towards your goals</span>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <div class="panel">
+                <h3>Income vs Expenses</h3>
+                <canvas id="financeChart"></canvas>
+            </div>
+            <div class="panel">
+                <h3>Expense Breakdown</h3>
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <h3>Recent Transactions</h3>
+                <a href="income.html">Manage transactions →</a>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentTransactions">
+                        <tr>
+                            <td colspan="5">No transactions recorded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

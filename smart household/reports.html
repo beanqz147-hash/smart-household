@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports | SmartFinance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="logo">₣ Smart<span>Finance</span></div>
+<p class="nav-label">MAIN MENU</p>
+<nav>
+<a href="dashboard.html">▦ Dashboard</a>
+<a href="income.html">↗ Income</a>
+<a href="expenses.html">↙ Expenses</a>
+<a href="budgets.html">▤ Budgets</a>
+<a href="goals.html">◎ Financial Goals</a>
+<a class="active" href="reports.html">▥ Reports</a>
+<a href="settings.html">⚙ Settings</a>
+</nav>
+<button class="logout-btn" onclick="logout()">↪ Logout</button>
+</aside>
+
+<main class="main-content">
+<header class="topbar">
+<div><h2>Financial Reports</h2><p class="date-display">Understand your household financial performance.</p></div>
+</header>
+
+<section class="summary-grid">
+<div class="summary-card green">
+<p>Total Income</p><h2 id="reportIncome">KSh 0.00</h2><span>Money received</span>
+</div>
+<div class="summary-card orange">
+<p>Total Expenses</p><h2 id="reportExpenses">KSh 0.00</h2><span>Money spent</span>
+</div>
+<div class="summary-card blue">
+<p>Net Balance</p><h2 id="reportBalance">KSh 0.00</h2><span>Income minus expenses</span>
+</div>
+</section>
+
+<section class="content-grid">
+<div class="panel">
+<h3>Income and Expenses</h3>
+<canvas id="reportFinanceChart"></canvas>
+</div>
+<div class="panel">
+<h3>Expense Categories</h3>
+<canvas id="reportExpenseChart"></canvas>
+</div>
+</section>
+
+<section class="panel">
+<h3>Transaction Summary</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Description</th><th>Category</th><th>Date</th><th>Type</th><th>Amount</th></tr></thead>
+<tbody id="reportTransactions">
+<tr><td colspan="5">No transactions available.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+<script src="reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Goals | SmartFinance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="logo">₣ Smart<span>Finance</span></div>
+<p class="nav-label">MAIN MENU</p>
+<nav>
+<a href="dashboard.html">▦ Dashboard</a>
+<a href="income.html">↗ Income</a>
+<a href="expenses.html">↙ Expenses</a>
+<a href="budgets.html">▤ Budgets</a>
+<a class="active" href="goals.html">◎ Financial Goals</a>
+<a href="reports.html">▥ Reports</a>
+<a href="settings.html">⚙ Settings</a>
+</nav>
+<button class="logout-btn" onclick="logout()">↪ Logout</button>
+</aside>
+
+<main class="main-content">
+<header class="topbar">
+<div><h2>Financial Goals</h2><p class="date-display">Set savings targets and follow your progress.</p></div>
+</header>
+
+<section class="panel">
+<h3>Create a Savings Goal</h3>
+<form id="goalForm" class="form-grid">
+<div>
+<label>Goal Name</label>
+<input type="text" id="goalName" placeholder="e.g. Emergency Fund" required>
+</div>
+<div>
+<label>Target Amount (KSh)</label>
+<input type="number" id="goalTarget" min="1" step="0.01" placeholder="Target amount" required>
+</div>
+<div>
+<label>Amount Already Saved (KSh)</label>
+<input type="number" id="goalSaved" min="0" step="0.01" value="0" required>
+</div>
+<div>
+<label>Target Date</label>
+<input type="date" id="goalDate" required>
+</div>
+<button class="primary-btn" type="submit">+ Add Goal</button>
+</form>
+</section>
+
+<section class="panel">
+<h3>Your Savings Goals</h3>
+<div id="goalList" class="goal-grid">
+<p class="muted">No savings goals created yet.</p>
+</div>
+</section>
+</main>
+</div>
+<script src="app.js"></script>
+<script src="goals.js"></script>
+</body>
+</html>

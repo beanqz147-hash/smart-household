@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings | SmartFinance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="logo">₣ Smart<span>Finance</span></div>
+<p class="nav-label">MAIN MENU</p>
+<nav>
+<a href="dashboard.html">▦ Dashboard</a>
+<a href="income.html">↗ Income</a>
+<a href="expenses.html">↙ Expenses</a>
+<a href="budgets.html">▤ Budgets</a>
+<a href="goals.html">◎ Financial Goals</a>
+<a href="reports.html">▥ Reports</a>
+<a class="active" href="settings.html">⚙ Settings</a>
+</nav>
+<button class="logout-btn" onclick="logout()">↪ Logout</button>
+</aside>
+
+<main class="main-content">
+<header class="topbar">
+<div><h2>Account Settings</h2><p class="date-display">Manage your account information.</p></div>
+</header>
+
+<section class="panel">
+<h3>Personal Information</h3>
+<form id="settingsForm" class="form-grid">
+<div>
+<label>Full Name</label>
+<input type="text" id="settingsName" required>
+</div>
+<div>
+<label>Email Address</label>
+<input type="email" id="settingsEmail" disabled>
+</div>
+<button type="submit" class="primary-btn">Save Changes</button>
+<p id="settingsMessage" class="message form-wide"></p>
+</form>
+</section>
+
+<section class="panel danger-panel">
+<h3>Account Management</h3>
+<p class="muted">Permanently delete your account and locally stored financial records.</p>
+<button type="button" class="danger-btn" onclick="deleteAccount()">Delete Account</button>
+</section>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
